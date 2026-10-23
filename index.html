@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form Pemesanan - Mamaika Catering</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-slate-50 text-slate-800 font-sans antialiased py-8 px-4">
+
+    <div class="max-w-xl mx-auto bg-white p-6 sm:p-8 rounded-2xl shadow-lg border border-slate-100">
+        <!-- Header / Judul -->
+        <div class="text-center mb-6">
+            <h1 class="text-2xl font-bold text-slate-900">MAMAIKA CATERING</h1>
+            <p class="text-sm text-slate-500 mt-1">Silakan isi formulir pemesanan paket aqiqah di bawah ini.</p>
+        </div>
+
+        <!-- Form Utama -->
+        <form id="orderForm" class="space-y-4">
+            
+            <!-- Pilihan Paket Aqiqah (Putra & Putri) -->
+            <div>
+                <label class="block text-sm font-semibold mb-1">Pilih Paket Aqiqah</label>
+                <select id="paketAqiqah" class="w-full px-3 py-2 border border-slate-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-emerald-500 bg-emerald-50 text-emerald-900 font-medium">
+                    <optgroup label="--- PAKET AQIQAH PUTRI ---">
+                        <option value="Paket Putri - 50 Box (Rp 2.500.000)">Paket Putri - 50 Box | Rp 2.500.000 (Bonus: Menu Keluarga 10 Gule + 30 Sate)</option>
+                        <option value="Paket Putri - 60 Box (Rp 2.700.000)">Paket Putri - 60 Box | Rp 2.700.000</option>
+                        <option value="Paket Putri - 70 Box (Rp 3.150.000)">Paket Putri - 70 Box | Rp 3.150.000 (Bonus: Menu Keluarga 10 Gule + 30 Sate)</option>
+                        <option value="Paket Putri - 80 Box (Rp 3.450.000)">Paket Putri - 80 Box | Rp 3.450.000</option>
+                        <option value="Paket Putri - 100 Box (Rp 4.200.000)">Paket Putri - 100 Box | Rp 4.200.000 (Bonus: Menu Keluarga 10 Gule + 30 Sate)</option>
+                    </optgroup>
+                    <optgroup label="--- PAKET AQIQAH PUTRA ---">
+                        <option value="Paket Putra - 80 Box (Rp 4.500.000)">Paket Putra - 80 Box (2 Ekor Kambing) | Rp 4.500.000 (Bonus: Menu Keluarga 10 Gule + 30 Sate)</option>
+                        <option value="Paket Putra - 100 Box (Rp 4.700.000)">Paket Putra - 100 Box (2 Ekor Kambing) | Rp 4.700.000 (Bonus: Menu Keluarga 10 Gule + 30 Sate)</option>
+                    </optgroup>
+                </select>
+            </div>
+
+            <!-- Grid Data Anak -->
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                <div>
+                    <label class="block text-sm font-semibold mb-1">Nama Anak</label>
+                    <input type="text" id="namaAnak" placeholder="Contoh: El Zara Luthfida" required class="w-full px-3 py-2 border border-slate-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-emerald-500">
+                </div>
+                <div>
+                    <label class="block text-sm font-semibold mb-1">Tempat, Tgl Lahir</label>
+                    <input type="text" id="tglLahir" placeholder="Contoh: Parung, 17 Sept 2026" required class="w-full px-3 py-2 border border-slate-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-emerald-500">
+                </div>
+            </div>
+
+            <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
+                <div>
+                    <label class="block text-sm font-semibold mb-1">Anak Ke-</label>
+                    <input type="number" id="anakKe" placeholder="2" class="w-full px-3 py-2 border border-slate-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-emerald-500">
+                </div>
+                <div>
+                    <label class="block text-sm font-semibold mb-1">Nama Ayah</label>
+                    <input type="text" id="namaAyah" placeholder="Nama Ayah" class="w-full px-3 py-2 border border-slate-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-emerald-500">
+                </div>
+                <div>
+                    <label class="block text-sm font-semibold mb-1">Nama Ibu</label>
+                    <input type="text" id="namaIbu" placeholder="Nama Ibu" class="w-full px-3 py-2 border border-slate-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-emerald-500">
+                </div>
+            </div>
+
+            <!-- Menu Masakan & Keterangan Menu -->
+            <div>
+                <label class="block text-sm font-semibold mb-1">Menu Masakan (Bawaan Paket)</label>
+                <input type="text" id="menuMasakan" value="Nasi putih, sate / teriyaki, gule, acar, silky puding, kerupuk, alat makan, ucapan, sertifikat, dokumentasi, penyembelihan" class="w-full px-3 py-2 border border-slate-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-emerald-500 bg-slate-50 text-slate-600 text-sm">
+            </div>
+
+            <!-- Alamat & Waktu Pengiriman -->
+            <div>
+                <label class="block text-sm font-semibold mb-1">Alamat Kirim Lengkap</label>
+                <textarea id="alamat" rows="2" placeholder="Nama Perumahan/Jalan, RT/RW, Blok, No Rumah" required class="w-full px-3 py-2 border border-slate-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-emerald-500"></textarea>
+            </div>
+
+            <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
+                <div>
+                    <label class="block text-sm font-semibold mb-1">Hari Acara</label>
+                    <input type="text" id="hari" placeholder="Contoh: Selasa" required class="w-full px-3 py-2 border border-slate-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-emerald-500">
+                </div>
+                <div>
+                    <label class="block text-sm font-semibold mb-1">Tanggal Kirim</label>
+                    <input type="date" id="tglKirim" required class="w-full px-3 py-2 border border-slate-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-emerald-500">
+                </div>
+                <div>
+                    <label class="block text-sm font-semibold mb-1">Jam Kirim</label>
+                    <input type="time" id="jamKirim" value="11:00" required class="w-full px-3 py-2 border border-slate-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-emerald-500">
+                </div>
+            </div>
+
+            <!-- Kontak & Keterangan -->
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                <div>
+                    <label class="block text-sm font-semibold mb-1">No HP / WhatsApp Pemesan</label>
+                    <input type="tel" id="noHp" placeholder="08xxxxxxxxxx" required class="w-full px-3 py-2 border border-slate-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-emerald-500">
+                </div>
+                <div>
+                    <label class="block text-sm font-semibold mb-1">Tahu Kami Dari Mana?</label>
+                    <select id="sumberInfo" class="w-full px-3 py-2 border border-slate-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-emerald-500">
+                        <option value="Instagram">Instagram</option>
+                        <option value="Facebook">Facebook</option>
+                        <option value="Google / Web">Google / Web</option>
+                        <option value="Teman / Keluarga">Teman / Keluarga</option>
+                    </select>
+                </div>
+            </div>
+
+            <div>
+                <label class="block text-sm font-semibold mb-1">Keterangan Tambahan (Catatan)</label>
+                <textarea id="keterangan" rows="2" placeholder="Contoh: Mohon dikirim tepat waktu ya" class="w-full px-3 py-2 border border-slate-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-emerald-500"></textarea>
+            </div>
+
+            <!-- Informasi Rekening BNI (Bisa di-copy / dipilih) -->
+            <div class="bg-emerald-50 border border-emerald-200 rounded-xl p-4 text-sm text-emerald-900 space-y-2">
+                <p class="font-bold">Informasi Pembayaran:</p>
+                <p class="text-xs text-emerald-700">Pembayaran DP pemesanan 50%, sisa pembayaran dibayarkan 1 hari sebelum hari H.</p>
+                <div class="bg-white p-3 rounded-lg border border-emerald-100 flex items-center justify-between">
+                    <div>
+                        <span class="text-xs text-slate-500 block">Bank BNI (A.N Iskawati)</span>
+                        <span id="noRekening" class="font-mono font-bold text-base text-slate-800 select-all">2059150679</span>
+                    </div>
+                    <button type="button" onclick="SalinRekening()" class="bg-emerald-600 hover:bg-emerald-700 text-white text-xs px-3 py-2 rounded-lg transition duration-200">
+                        Salin Rekening
+                    </button>
+                </div>
+            </div>
+
+            <!-- Tombol Kirim ke WhatsApp -->
+            <button type="button" onclick="KirimKeWhatsApp()" class="w-full bg-emerald-600 hover:bg-emerald-700 text-white font-semibold py-3 px-4 rounded-xl transition duration-200 shadow-md flex items-center justify-center space-x-2">
+                <span>Kirim Pesanan ke WhatsApp</span>
+            </button>
+        </form>
+    </div>
+
+    <!-- Script JavaScript -->
+    <script>
+        // Fungsi untuk menyalin nomor rekening dengan tombol
+        function SalinRekening() {
+            const noRek = document.getElementById('noRekening').innerText;
+            navigator.clipboard.writeText(noRek).then(() => {
+                alert('Nomor rekening berhasil disalin: ' + noRek);
+            }).catch(err => {
+                alert('Gagal menyalin nomor rekening.');
+            });
+        }
+
+        function KirimKeWhatsApp() {
+            const paketAqiqah = document.getElementById('paketAqiqah').value;
+            const namaAnak = document.getElementById('namaAnak').value;
+            const tglLahir = document.getElementById('tglLahir').value;
+            const anakKe = document.getElementById('anakKe').value;
+            const namaAyah = document.getElementById('namaAyah').value;
+            const namaIbu = document.getElementById('namaIbu').value;
+            const menuMasakan = document.getElementById('menuMasakan').value;
+            const alamat = document.getElementById('alamat').value;
+            const hari = document.getElementById('hari').value;
+            const tglKirim = document.getElementById('tglKirim').value;
+            const jamKirim = document.getElementById('jamKirim').value;
+            const noHp = document.getElementById('noHp').value;
+            const sumberInfo = document.getElementById('sumberInfo').value;
+            const keterangan = document.getElementById('keterangan').value;
+
+            // Validasi kolom wajib
+            if (!namaAnak || !alamat || !noHp || !tglKirim) {
+                alert('Mohon isi kolom Nama Anak, Alamat, Tanggal Kirim, dan No HP dengan lengkap!');
+                return;
+            }
+
+            // Susun format pesan teks WhatsApp
+            let pesan = `*FORM PEMESANAN MAMAIKA CATERING*\n\n` +
+                        `*Nama Paket Aqiqah:* ${paketAqiqah}\n` +
+                        `*Nama Anak:* ${namaAnak}\n` +
+                        `*Tempat Tgl Lahir:* ${tglLahir}\n` +
+                        `*Anak ke:* ${anakKe || '-'}\n` +
+                        `*Nama Ayah:* ${namaAyah || '-'}\n` +
+                        `*Nama Ibu:* ${namaIbu || '-'}\n\n` +
+                        `*Menu Masakan:* ${menuMasakan}\n\n` +
+                        `*Alamat Kirim:* ${alamat}\n` +
+                        `*Tgl Kirim:* ${tglKirim}\n` +
+                        `*Hari:* ${hari}\n` +
+                        `*Jam Kirim:* ${jamKirim}\n\n` +
+                        `*NO HP / WA:* ${noHp}\n` +
+                        `*KETERANGAN:* ${keterangan || '-'}\n\n` +
+                        `*NB:* MOHON DIKIRIM FOTO ANAK UNTUK KEPERLUAN SERTIFIKAT\n\n` +
+                        `*Tahu kami darimana?* ${sumberInfo}\n\n` +
+                        `--- pembayaran DP 50% ---\n` +
+                        `Bank BNI: 2059150679 (Iskawati)`;
+
+            // Nomor WhatsApp tujuan
+            const nomorWhatsAppTujuan = "6288212166611"; 
+
+            const urlWhatsApp = `https://wa.me/${nomorWhatsAppTujuan}?text=${encodeURIComponent(pesan)}`;
+
+            window.open(urlWhatsApp, '_blank');
+        }
+    </script>
+</body>
+</html>
