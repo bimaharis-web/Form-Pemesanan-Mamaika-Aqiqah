@@ -67,7 +67,13 @@
             <!-- Menu Masakan & Keterangan Menu -->
             <div>
                 <label class="block text-sm font-semibold mb-1">Menu Masakan (Bawaan Paket)</label>
-                <input type="text" id="menuMasakan" value="Nasi putih, sate / teriyaki, gule, acar, silky puding, kerupuk, alat makan, ucapan, sertifikat, dokumentasi, penyembelihan" class="w-full px-3 py-2 border border-slate-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-emerald-500 bg-slate-50 text-slate-600 text-sm">
+                <select id="menuMasakan" class="w-full px-3 py-2 border border-slate-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-emerald-500 bg-white text-slate-800 text-sm">
+                    <option value="" selected>Pilih menu masakan</option>
+                    <option value="Sate + Gule">Sate + Gule</option>
+                    <option value="Teriyaki + Gule">Teriyaki + Gule</option>
+                    <option value="Rendang + Gule">Rendang + Gule</option>
+                    <option value="Lada Hitam + Gule">Lada Hitam + Gule</option>
+                </select>
             </div>
 
             <!-- Alamat & Waktu Pengiriman -->
@@ -177,7 +183,7 @@
                         `*Anak ke:* ${anakKe || '-'}\n` +
                         `*Nama Ayah:* ${namaAyah || '-'}\n` +
                         `*Nama Ibu:* ${namaIbu || '-'}\n\n` +
-                        `*Menu Masakan:* ${menuMasakan}\n\n` +
+                        `*Menu Masakan:* ${menuMasakan || '-'}\n\n` +
                         `*Alamat Kirim:* ${alamat}\n` +
                         `*Tgl Kirim:* ${tglKirim}\n` +
                         `*Hari:* ${hari}\n` +
